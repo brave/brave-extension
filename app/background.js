@@ -31,9 +31,7 @@ promisifyAll(chrome.storage, [
 ])
 
 promisifyAll(chrome.contentSettings, [
-  'braveAdBlock',
-  'braveTrackingProtection',
-  'braveHTTPSEverywhere',
+  'plugins',
   'javascript'
 ])
 
