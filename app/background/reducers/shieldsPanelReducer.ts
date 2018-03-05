@@ -29,6 +29,15 @@ const updateBadgeText = (state: State) => {
   }
 }
 
+const updateShieldEnabledState = (state: State) => {
+  const tabId: number = shieldsPanelState.getActiveTabId(state)
+  console.log('update shield enabled state: ', tabId)
+  if (state.tabs[tabId]) {
+    console.log('disabling tabId: ', tabId)
+    chrome.browserAction.disable(tabId)
+  }
+}
+
 const focusedWindowChanged = (state: State, windowId: number): State => {
   if (windowId !== -1) {
     state = shieldsPanelState.updateFocusedWindow(state, windowId)
@@ -87,6 +96,7 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
         if (tab.active && tab.id) {
           state = updateActiveTab(state, tab.windowId, tab.id)
           updateBadgeText(state)
+          updateShieldEnabledState(state)
         }
         break
       }
@@ -100,6 +110,7 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
         if (tab.active && tab.id) {
           state = updateActiveTab(state, tab.windowId, tab.id)
           updateBadgeText(state)
+          updateShieldEnabledState(state)
         }
         break
       }
