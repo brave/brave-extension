@@ -1,0 +1,10 @@
+copy("resources") {
+  sources = [
+    "bravelizer.css",
+    "img/icon-128.png",
+    "img/icon-16.png",
+    "img/icon-48.png",
+  ]
+
+  outputs = [ "$root_gen_dir/brave_extension/{{source_target_relative}}" ]
+}

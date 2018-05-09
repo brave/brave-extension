@@ -12,4 +12,4 @@ html
     #root
     if env !== 'prod'
       script(src='chrome-extension://lmhkpmbekcpmknklioeibfkpmmfibljd/js/redux-devtools-extension.js')
-    script(src=env == 'prod' ? '/js/braveShieldsPanel.bundle.js' : 'https://localhost:3000/js/braveShieldsPanel.bundle.js')
+    script(src=webpackPublicPath + '/js/braveShieldsPanel.bundle.js')

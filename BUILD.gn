@@ -1,59 +1,87 @@
 import("//build/util/branding.gni")
 import("//build/util/version.gni")
+import("//chrome/common/features.gni")
+import("//tools/grit/grit_rule.gni")
 
-action("brave-extension") {
-  # Need this to fire re-pack if changed, nevertheless extension is repacked on each 2nd build
-  inputs = [
+declare_args() {
+  brave_extension_webpack_public_path = "http://localhost:3000"
+}
+
+action("build") {
+  sources = [
     "app/components/braveShields/braveShields.tsx",
     "app/components/braveShields/braveShieldsControls.tsx",
     "app/components/braveShields/braveShieldsFooter.tsx",
     "app/components/braveShields/braveShieldsHeader.tsx",
     "app/components/braveShields/braveShieldsStats.tsx",
     "app/braveShieldsPanel.tsx",
-  ]
-  script = "py-scripts/build-brave-extension.py"
-  args = [ rebase_path("../.."), rebase_path(root_build_dir) ]
-  outputs = [
-    "$target_gen_dir/brave_extension/build/background.html",
-    "$target_gen_dir/brave_extension/build/js/background.bundle.js",
-    "$target_gen_dir/brave_extension/build/js/braveShieldsPanel.bundle.js",
-    "$target_gen_dir/brave_extension/build/braveShieldsPanel.html",
-    "$target_gen_dir/brave_extension/build/bravelizer.css",
-    "$target_gen_dir/brave_extension/build/img/icon-128.png",
-    "$target_gen_dir/brave_extension/build/img/icon-16.png",
-    "$target_gen_dir/brave_extension/build/img/icon-48.png",
-    "$target_gen_dir/brave_extension/build/_locales/en_US/messages.json",
+    # TODO(bridiver) - all tsx files should be listed here or changes won't trigger a rebuild
+    "app/views/background.pug",
+    "app/views/braveShieldsPanel.pug",
+    "app/views/inject.pug",
   ]
 
-  # For macOS deps is bounded in //chrome:chrome_framework
-  # For Windows installer copying is done in \\chrome\tools\build\win\create_installer_archive.py
-  # Deps below is used for Linux and debugging environment output dir on Windows
-  if (!is_mac) {
-    deps = [":copy-extension-localization"]
-  }
+  # env = "dev"
+  # webpack_public_path = brave_extension_webpack_public_path
+  # if (is_official_build) {
+    webpack_public_path = ""
+    env = "prod"
+  # }
+
+  inputs = [
+    "scripts/build.js",
+  ]
+
+  script = "py-scripts/build-brave-extension.py"
+
+  args = [ rebase_path("."), rebase_path("$root_gen_dir/brave_extension"), "'$webpack_public_path'", env ]
+
+  outputs = [
+    "$root_gen_dir/brave_extension/js/background.bundle.js",
+    "$root_gen_dir/brave_extension/js/braveShieldsPanel.bundle.js",
+    "$root_gen_dir/brave_extension/braveShieldsPanel.html",
+    "$root_gen_dir/brave_extension/background.html",
+    "$root_gen_dir/brave_extension/inject.html",
+  ]
+
+  deps = [
+    ":manifest",
+  ]
 }
 
-action("copy-extension-localization") {
-  script = "py-scripts/copy-brave-extension-localization.py"
+copy("manifest") {
+  sources = []
+  # if (is_official_build) {
+  #   sources += [ "//brave/vendor/brave-extension/app/manifest.dev.json"]
+  # } else {
+    sources += [ "//brave/vendor/brave-extension/app/manifest.prod.json"]
+  # }
 
-  # changes of something from the list below makes script re-run
-  sources = [
-    "//brave/vendor/brave-extension/app/_locales/en_US/messages.json",
+  outputs = [ "$root_gen_dir/brave_extension/manfiest.json" ]
+}
+
+grit("generated_resources") {
+  source = "resources/brave_extension.grd"
+
+  source_is_generated = true
+
+  grit_flags = [
+    "-E",
+    "root_gen_dir=" + rebase_path(root_gen_dir),
   ]
 
-  args = []
-  if (is_mac) {
-    chrome_framework_name = chrome_product_full_name + " Framework"
-    resources_target_dir = "$root_out_dir/$chrome_framework_name.framework/Resources"
-  } else {
-    resources_target_dir = "$root_build_dir/resources"
-  }
-
-  args = [
-    rebase_path("$resources_target_dir"),
-  ]
-
+  output_dir = "$root_gen_dir/brave/browser/resources"
   outputs = [
-    "$resources_target_dir/brave_extension/_locales/en-US/messages.json",
+    "grit/brave_extension.h",
+    "grit/brave_extension_resources_map.cc",
+    "grit/brave_extension_resources_map.h",
+    "brave_extension.pak",
   ]
+
+  deps = [
+    ":build",
+    "resources",
+  ]
+
+  resource_ids = "//brave/browser/resources/resource_ids"
 }
