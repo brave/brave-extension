@@ -14,6 +14,8 @@ action("brave-extension") {
     "$target_gen_dir/brave_extension/build/background.html",
     "$target_gen_dir/brave_extension/build/js/background.bundle.js",
     "$target_gen_dir/brave_extension/build/js/braveShieldsPanel.bundle.js",
+    "$target_gen_dir/brave_extension/build/js/extensions_inject.js",
+    "$target_gen_dir/brave_extension/build/js/settings_inject.js",
     "$target_gen_dir/brave_extension/build/braveShieldsPanel.html",
     "$target_gen_dir/brave_extension/build/bravelizer.css",
     "$target_gen_dir/brave_extension/build/img/icon-128.png",
