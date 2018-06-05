@@ -8,6 +8,7 @@ const customPath = path.join(__dirname, './customPublicPath')
 const hotScript = 'webpack-hot-middleware/client?path=__webpack_hmr&dynamicPublicPath=true'
 
 const baseDevConfig = () => ({
+  mode: 'development',
   devtool: 'eval-cheap-module-source-map',
   entry: {
     braveShieldsPanel: [customPath, hotScript, path.join(__dirname, '../app/braveShieldsPanel')],
@@ -35,10 +36,7 @@ const baseDevConfig = () => ({
     new webpack.IgnorePlugin(/[^/]+\/[\S]+.prod$/),
     new webpack.DefinePlugin({
       __HOST__: `'${host}'`,
-      __PORT__: port,
-      'process.env': {
-        NODE_ENV: JSON.stringify('development')
-      }
+      __PORT__: port
     })
   ],
   resolve: {
