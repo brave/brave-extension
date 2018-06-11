@@ -36,10 +36,7 @@ const baseDevConfig = () => ({
     new webpack.IgnorePlugin(/[^/]+\/[\S]+.prod$/),
     new webpack.DefinePlugin({
       __HOST__: `'${host}'`,
-      __PORT__: port,
-      'process.env': {
-        NODE_ENV: JSON.stringify('development')
-      }
+      __PORT__: port
     })
   ],
   resolve: {

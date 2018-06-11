@@ -6,11 +6,11 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const customPath = path.join(__dirname, './customPublicPath')
 
 module.exports = {
+  mode: 'production',
   entry: {
     braveShieldsPanel: [customPath, path.join(__dirname, '../app/braveShieldsPanel')],
     background: [customPath, path.join(__dirname, '../app/background')]
   },
-  mode: 'production',
   optimization: {
     minimizer: [
       new UglifyJSPlugin({
@@ -31,11 +31,6 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.IgnorePlugin(/[^/]+\/[\S]+.dev$/),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    })
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js']
