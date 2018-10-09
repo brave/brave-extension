@@ -27,7 +27,7 @@
 //   blockAdsTrackers: shieldActions.BlockAdsTrackers
 //   controlsToggled: shieldActions.ControlsToggled
 //   httpsEverywhereToggled: shieldActions.HttpsEverywhereToggled
-//   javascriptToggled: shieldActions.JavascriptToggled
+//   blockJavaScript: shieldActions.BlockJavaScript
 //   blockFingerprinting: shieldActions.BlockFingerprinting
 //   blockCookies: shieldActions.BlockCookies
 //   noScriptInfo: NoScriptInfo
@@ -61,7 +61,7 @@
 //   }
 
 //   onToggleJavaScript () {
-//     this.props.javascriptToggled()
+//     this.props.blockJavaScript()
 //   }
 
 //   onChangeFingerprintingProtection (e: HTMLSelectElement) {

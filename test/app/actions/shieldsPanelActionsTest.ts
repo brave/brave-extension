@@ -43,9 +43,9 @@ describe('shieldsPanelActions', () => {
     })
   })
 
-  it('javascriptToggled action', () => {
-    assert.deepEqual(actions.javascriptToggled(), {
-      type: types.JAVASCRIPT_TOGGLED
+  it('blockJavaScript action', () => {
+    assert.deepEqual(actions.blockJavaScript(), {
+      type: types.JAVASCRIPT_BLOCKED
     })
   })
 

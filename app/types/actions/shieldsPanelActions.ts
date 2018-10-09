@@ -3,7 +3,13 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import * as types from '../constants/shieldsPanelTypes'
-import { BlockTypes, BlockOptions, BlockFPOptions, BlockCookiesOptions } from '../other/blockTypes'
+import {
+  BlockTypes,
+  BlockOptions,
+  BlockFPOptions,
+  BlockJSOptions,
+  BlockCookiesOptions
+} from '../other/blockTypes'
 
 export interface ShieldDetails {
   id: number
@@ -94,12 +100,13 @@ export interface HttpsEverywhereToggled {
   (): HttpsEverywhereToggledReturn
 }
 
-interface JavascriptToggledReturn {
-  type: types.JAVASCRIPT_TOGGLED
+interface BlockJavaScriptReturn {
+  type: types.JAVASCRIPT_BLOCKED
+  setting: BlockJSOptions
 }
 
-export interface JavascriptToggled {
-  (): JavascriptToggledReturn
+export interface BlockJavaScript {
+  (setting: BlockJSOptions): BlockJavaScriptReturn
 }
 
 interface AllowScriptOriginsOnceReturn {
@@ -127,7 +134,7 @@ export type shieldPanelActions =
   BlockAdsTrackersReturn |
   ControlsToggledReturn |
   HttpsEverywhereToggledReturn |
-  JavascriptToggledReturn |
+  BlockJavaScriptReturn |
   BlockFingerprintingReturn |
   BlockCookiesReturn |
   AllowScriptOriginsOnceReturn |

@@ -174,14 +174,14 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
           })
         break
       }
-    case shieldsPanelTypes.JAVASCRIPT_TOGGLED:
+    case shieldsPanelTypes.JAVASCRIPT_BLOCKED:
       {
         const tabData = shieldsPanelState.getActiveTabData(state)
         if (!tabData) {
           console.error('Active tab not found')
           break
         }
-        setAllowJavaScript(tabData.origin, toggleShieldsValue(tabData.javascript))
+        setAllowJavaScript(tabData.origin, action.setting)
           .then(() => {
             requestShieldPanelData(shieldsPanelState.getActiveTabId(state))
             reloadTab(tabData.id, true).catch(() => {

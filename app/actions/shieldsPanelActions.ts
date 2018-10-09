@@ -46,9 +46,10 @@ export const httpsEverywhereToggled: actions.HttpsEverywhereToggled = () => {
   }
 }
 
-export const javascriptToggled: actions.JavascriptToggled = () => {
+export const blockJavaScript: actions.BlockJavaScript = (setting) => {
   return {
-    type: types.JAVASCRIPT_TOGGLED
+    type: types.JAVASCRIPT_BLOCKED,
+    setting
   }
 }
 

@@ -39,9 +39,9 @@
 //       type: actionTypes.HTTPS_EVERYWHERE_TOGGLED
 //     }
 //   },
-//   javascriptToggled: () => {
+//   blockJavaScript: () => {
 //     return {
-//       type: actionTypes.JAVASCRIPT_TOGGLED
+//       type: actionTypes.JAVASCRIPT_BLOCKED
 //     }
 //   },
 //   blockFingerprinting: (setting:BlockFPOptions) => {
@@ -195,7 +195,7 @@
 //       const value = {target: { checked: true }}
 //       const onToggleBlockScripts = sinon.spy()
 //       const newProps = Object.assign(fakeProps, {
-//         javascriptToggled: onToggleBlockScripts
+//         blockJavaScript: onToggleBlockScripts
 //       })
 
 //       const wrapper = shallow(baseComponent(newProps))

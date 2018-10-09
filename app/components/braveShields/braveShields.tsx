@@ -6,6 +6,7 @@ import * as React from 'react'
 import { ShieldsPanel } from 'brave-ui/features/shields'
 import ShieldsHeader from './header'
 import ShieldsInterfaceControls from './interfaceControls'
+import ShieldsPrivacyControls from './privacyControls'
 import ShieldsFooter from './footer'
 import * as shieldActions from '../../types/actions/shieldsPanelActions'
 import { Tab } from '../../types/state/shieldsPannelState'
@@ -14,6 +15,9 @@ interface Props {
   actions: {
     shieldsToggled: shieldActions.ShieldsToggled
     blockAdsTrackers: shieldActions.BlockAdsTrackers
+    blockJavaScript: shieldActions.BlockJavaScript
+    blockFingerprinting: shieldActions.BlockFingerprinting
+    blockCookies: shieldActions.BlockCookies
   }
   shieldsPanelTabData: Tab
 }
@@ -38,6 +42,17 @@ export default class BraveShields extends React.Component<Props, {}> {
           trackersBlocked={shieldsPanelTabData.trackersBlocked}
           ads={shieldsPanelTabData.ads}
           trackers={shieldsPanelTabData.trackers}
+        />
+        <ShieldsPrivacyControls
+          braveShields={shieldsPanelTabData.braveShields}
+          fingerprinting={shieldsPanelTabData.fingerprinting}
+          fingerprintingBlocked={shieldsPanelTabData.fingerprintingBlocked}
+          blockFingerprinting={actions.blockFingerprinting}
+          javascript={shieldsPanelTabData.javascript}
+          javascriptBlocked={shieldsPanelTabData.javascriptBlocked}
+          blockJavaScript={actions.blockJavaScript}
+          blockCookies={actions.blockCookies}
+          cookies={shieldsPanelTabData.cookies}
         />
         <ShieldsFooter />
       </ShieldsPanel>

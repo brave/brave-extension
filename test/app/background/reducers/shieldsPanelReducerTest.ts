@@ -384,7 +384,7 @@ describe('braveShieldsPanelReducer', () => {
     })
   })
 
-  describe('JAVASCRIPT_TOGGLED', function () {
+  describe('JAVASCRIPT_BLOCKED', function () {
     before(function () {
       this.reloadTabSpy = sinon.spy(tabsAPI, 'reloadTab')
       this.setAllowJavaScriptSpy = sinon.spy(shieldsAPI, 'setAllowJavaScript')
@@ -396,7 +396,7 @@ describe('braveShieldsPanelReducer', () => {
     it('should call setAllowJavaScript', function () {
       assert.deepEqual(
         shieldsPanelReducer(state, {
-          type: types.JAVASCRIPT_TOGGLED
+          type: types.JAVASCRIPT_BLOCKED
         }), state)
       assert.equal(this.setAllowJavaScriptSpy.withArgs(origin, 'allow').calledOnce, true)
     })
