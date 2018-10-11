@@ -51,10 +51,10 @@ export default class ShieldsInterfaceControls extends React.PureComponent<Props,
     }
 
     return (
-      <>
+      <div id='braveShieldsInterfaceControls'>
         {/* ads toggle */}
         <GridLabel>
-        <Stat>{this.totalAdsTrackersBlocked}</Stat>
+          <Stat id='blockAdsStat'>{this.totalAdsTrackersBlocked}</Stat>
           <span>{getMessage('blockAds')}</span>
         <Toggle id='blockAds' checked={blockAdsOption} onChange={this.onChangeBlockAds} />
         </GridLabel>
@@ -70,7 +70,7 @@ export default class ShieldsInterfaceControls extends React.PureComponent<Props,
           <span>{getMessage('blockImages')}</span>
           <Toggle id='blockImages' checked={false} onChange={this.onChangeBlockImages} />
         </GridLabel> */}
-      </>
+      </div>
     )
   }
 }
