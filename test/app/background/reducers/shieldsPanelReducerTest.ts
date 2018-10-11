@@ -377,7 +377,8 @@ describe('braveShieldsPanelReducer', () => {
     it('should call setAllowJavaScript', function () {
       assert.deepEqual(
         shieldsPanelReducer(state, {
-          type: types.JAVASCRIPT_BLOCKED
+          type: types.JAVASCRIPT_BLOCKED,
+          setting: 'allow'
         }), state)
       assert.equal(this.setAllowJavaScriptSpy.withArgs(origin, 'allow').calledOnce, true)
     })

@@ -8,7 +8,12 @@ import * as assert from 'assert'
 import * as types from '../../../app/constants/shieldsPanelTypes'
 import * as actions from '../../../app/actions/shieldsPanelActions'
 import { ShieldDetails, BlockDetails } from '../../../app/types/actions/shieldsPanelActions'
-import { BlockOptions, BlockFPOptions, BlockCookiesOptions } from '../../../app/types/other/blockTypes'
+import {
+  BlockOptions,
+  BlockFPOptions,
+  BlockJSOptions,
+  BlockCookiesOptions
+} from '../../../app/types/other/blockTypes'
 
 describe('shieldsPanelActions', () => {
   it('shieldsPanelDataUpdated', () => {
@@ -38,8 +43,10 @@ describe('shieldsPanelActions', () => {
   })
 
   it('blockJavaScript action', () => {
-    assert.deepEqual(actions.blockJavaScript(), {
-      type: types.JAVASCRIPT_BLOCKED
+    const setting: BlockJSOptions = 'allow'
+    assert.deepEqual(actions.blockJavaScript(setting), {
+      type: types.JAVASCRIPT_BLOCKED,
+      setting
     })
   })
 
