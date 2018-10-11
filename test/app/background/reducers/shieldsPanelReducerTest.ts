@@ -270,7 +270,6 @@ describe('braveShieldsPanelReducer', () => {
         origin,
         hostname: 'brave.com',
         adsBlocked: 0,
-        controlsOpen: true,
         braveShields: 'allow',
         trackersBlocked: 0,
         httpsRedirected: 0,
@@ -332,7 +331,7 @@ describe('braveShieldsPanelReducer', () => {
               javascript: 'block',
               fingerprinting: 'block',
               cookies: 'block',
-              controlsOpen: true,
+    
               braveShields: 'allow',
               noScriptInfo: {},
               adsBlockedResources: [],
@@ -437,7 +436,7 @@ describe('braveShieldsPanelReducer', () => {
             hostname: 'brave.com',
             url: 'https://brave.com',
             adsBlocked: 1,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             trackersBlocked: 2,
             httpsRedirected: 3,
@@ -495,7 +494,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 1,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -540,7 +539,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 1,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -583,7 +582,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 2,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -630,7 +629,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 2,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -727,7 +726,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 0,
             fingerprintingBlocked: 1,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -770,7 +769,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 0,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -811,7 +810,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 0,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -904,7 +903,7 @@ describe('braveShieldsPanelReducer', () => {
             fingerprintingBlocked: 0,
             origin: 'https://brave.com',
             hostname: 'brave.com',
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -948,7 +947,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 0,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -1003,7 +1002,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 0,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -1045,7 +1044,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 0,
             javascriptBlocked: 0,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -1086,7 +1085,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 1,
             javascriptBlocked: 0,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -1126,7 +1125,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 1,
             javascriptBlocked: 1,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -1168,7 +1167,7 @@ describe('braveShieldsPanelReducer', () => {
             httpsRedirected: 1,
             javascriptBlocked: 1,
             fingerprintingBlocked: 1,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             httpUpgradableResources: 'block',
             id: 2,
@@ -1216,25 +1215,6 @@ describe('braveShieldsPanelReducer', () => {
     })
   })
 
-  describe('CONTROLS_TOGGLED', function () {
-    before(function () {
-      this.spy = sinon.spy(shieldsPanelState, 'updateTabShieldsData')
-    })
-    after(function () {
-      this.spy.restore()
-    })
-    it('should call updateTabShieldsData', function () {
-      assert.deepEqual(
-        shieldsPanelReducer(state, {
-          type: types.CONTROLS_TOGGLED,
-          setting: true
-        }), state)
-
-      assert.equal(this.spy.calledOnce, true)
-      assert.equal(this.spy.getCall(0).args[2].controlsOpen, true)
-    })
-  })
-
   describe('ALLOW_SCRIPT_ORIGINS_ONCE', function () {
     before(function () {
       this.reloadTabSpy = sinon.spy(tabsAPI, 'reloadTab')
@@ -1271,7 +1251,7 @@ describe('braveShieldsPanelReducer', () => {
             origin,
             hostname: 'brave.com',
             adsBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             trackersBlocked: 0,
             httpsRedirected: 0,
@@ -1313,7 +1293,7 @@ describe('braveShieldsPanelReducer', () => {
             origin,
             hostname: 'brave.com',
             adsBlocked: 0,
-            controlsOpen: true,
+  
             braveShields: 'allow',
             trackersBlocked: 0,
             httpsRedirected: 0,

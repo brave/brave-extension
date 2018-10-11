@@ -63,14 +63,6 @@ describe('shieldsPanelActions', () => {
     })
   })
 
-  it('controlsToggled action', () => {
-    const setting: boolean = true
-    assert.deepEqual(actions.controlsToggled(setting), {
-      type: types.CONTROLS_TOGGLED,
-      setting
-    })
-  })
-
   it('blockFingerprinting action', () => {
     const setting: BlockFPOptions = 'block_third_party'
     assert.deepEqual(actions.blockFingerprinting(setting), {

@@ -27,7 +27,6 @@ export const tabs: Tabs = {
     javascript: 'block',
     fingerprinting: 'block',
     cookies: 'block',
-    controlsOpen: false,
     httpsRedirected: 0,
     javascriptBlocked: 0,
     fingerprintingBlocked: 0,

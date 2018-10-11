@@ -33,13 +33,6 @@ export const blockAdsTrackers: actions.BlockAdsTrackers = (setting) => {
   }
 }
 
-export const controlsToggled: actions.ControlsToggled = (setting = true) => {
-  return {
-    type: types.CONTROLS_TOGGLED,
-    setting
-  }
-}
-
 export const blockJavaScript: actions.BlockJavaScript = (setting) => {
   return {
     type: types.JAVASCRIPT_BLOCKED,

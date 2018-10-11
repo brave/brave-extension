@@ -8,7 +8,6 @@ import { NoScriptInfo } from '../other/noScriptInfo'
 export interface Tab {
   ads: BlockOptions
   adsBlocked: number
-  controlsOpen: boolean
   hostname: string
   httpUpgradableResources: BlockOptions
   httpsRedirected: number

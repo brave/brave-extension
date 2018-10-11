@@ -208,7 +208,6 @@ describe('shieldsPanelState test', () => {
             javascript: 'allow',
             fingerprinting: 'allow',
             cookies: 'allow',
-            controlsOpen: true,
             braveShields: 'allow',
             adsBlocked: 0,
             trackersBlocked: 0,
@@ -255,7 +254,6 @@ describe('shieldsPanelState test', () => {
             httpsRedirected: 5,
             javascriptBlocked: 5,
             fingerprintingBlocked: 5,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             origin: 'https://brave.com',
             braveShields: 'block',
@@ -270,7 +268,6 @@ describe('shieldsPanelState test', () => {
           3: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -295,7 +292,6 @@ describe('shieldsPanelState test', () => {
           4: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -345,7 +341,6 @@ describe('shieldsPanelState test', () => {
             httpsRedirected: 0,
             javascriptBlocked: 0,
             fingerprintingBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             origin: 'https://brave.com',
             braveShields: 'block',
@@ -360,7 +355,6 @@ describe('shieldsPanelState test', () => {
           3: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -385,7 +379,6 @@ describe('shieldsPanelState test', () => {
           4: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -422,7 +415,6 @@ describe('shieldsPanelState test', () => {
           2: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -447,7 +439,6 @@ describe('shieldsPanelState test', () => {
           3: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -472,7 +463,6 @@ describe('shieldsPanelState test', () => {
           4: {
             ads: 'block',
             adsBlocked: 3,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 5,
@@ -507,7 +497,6 @@ describe('shieldsPanelState test', () => {
           2: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -532,7 +521,6 @@ describe('shieldsPanelState test', () => {
           3: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -557,7 +545,6 @@ describe('shieldsPanelState test', () => {
           4: {
             ads: 'block',
             adsBlocked: 0,
-            controlsOpen: true,
             hostname: 'https://brave.com',
             httpUpgradableResources: 'block',
             httpsRedirected: 0,
@@ -713,7 +700,6 @@ describe('shieldsPanelState test', () => {
           id: 2,
           ads: 'block',
           adsBlocked: 0,
-          controlsOpen: true,
           hostname: 'https://brave.com',
           httpUpgradableResources: 'block',
           httpsRedirected: 0,
@@ -741,7 +727,6 @@ describe('shieldsPanelState test', () => {
           id: 3,
           ads: 'block',
           adsBlocked: 0,
-          controlsOpen: true,
           hostname: 'https://brave.com',
           httpUpgradableResources: 'block',
           httpsRedirected: 0,
@@ -781,7 +766,7 @@ describe('shieldsPanelState test', () => {
               id: 2,
               ads: 'block',
               adsBlocked: 0,
-              controlsOpen: true,
+
               hostname: 'https://brave.com',
               httpUpgradableResources: 'block',
               httpsRedirected: 0,
@@ -808,7 +793,7 @@ describe('shieldsPanelState test', () => {
               id: 3,
               ads: 'block',
               adsBlocked: 0,
-              controlsOpen: true,
+
               hostname: 'https://brave.com',
               httpUpgradableResources: 'block',
               httpsRedirected: 0,
@@ -849,7 +834,7 @@ describe('shieldsPanelState test', () => {
               id: 2,
               ads: 'block',
               adsBlocked: 0,
-              controlsOpen: true,
+
               hostname: 'https://brave.com',
               httpUpgradableResources: 'block',
               httpsRedirected: 0,
@@ -874,7 +859,7 @@ describe('shieldsPanelState test', () => {
               id: 3,
               ads: 'block',
               adsBlocked: 0,
-              controlsOpen: true,
+
               hostname: 'https://brave.com',
               httpUpgradableResources: 'block',
               httpsRedirected: 0,

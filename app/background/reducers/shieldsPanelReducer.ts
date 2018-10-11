@@ -216,13 +216,6 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
           })
         break
       }
-    case shieldsPanelTypes.CONTROLS_TOGGLED:
-      {
-        const tabId: number = shieldsPanelState.getActiveTabId(state)
-        state = shieldsPanelState
-          .updateTabShieldsData(state, tabId, { controlsOpen: action.setting })
-        break
-      }
     case shieldsPanelTypes.BLOCK_FINGERPRINTING:
       {
         const tabData = shieldsPanelState.getActiveTabData(state)

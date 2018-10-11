@@ -39,7 +39,6 @@ export const updateTabShieldsData: shieldState.UpdateTabShieldsData = (state, ta
     httpUpgradableResources: 'allow',
     javascript: 'allow',
     fingerprinting: 'allow',
-    controlsOpen: true,
     noScriptInfo: {},
     adsBlockedResources: [],
     trackersBlockedResources: [],

@@ -83,15 +83,6 @@ export interface BlockCookies {
   (setting: BlockCookiesOptions): BlockCookiesReturn
 }
 
-interface ControlsToggledReturn {
-  type: types.CONTROLS_TOGGLED
-  setting: boolean
-}
-
-export interface ControlsToggled {
-  (setting: boolean): ControlsToggledReturn
-}
-
 interface BlockJavaScriptReturn {
   type: types.JAVASCRIPT_BLOCKED
   setting: BlockJSOptions
@@ -124,7 +115,6 @@ export type shieldPanelActions =
   ShieldsToggledReturn |
   ResourceBlockedReturn |
   BlockAdsTrackersReturn |
-  ControlsToggledReturn |
   BlockJavaScriptReturn |
   BlockFingerprintingReturn |
   BlockCookiesReturn |

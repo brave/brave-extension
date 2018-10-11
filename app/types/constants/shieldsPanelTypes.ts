@@ -8,7 +8,6 @@ export type SHIELDS_PANEL_DATA_UPDATED = typeof types.SHIELDS_PANEL_DATA_UPDATED
 export type SHIELDS_TOGGLED = typeof types.SHIELDS_TOGGLED
 export type RESOURCE_BLOCKED = typeof types.RESOURCE_BLOCKED
 export type BLOCK_ADS_TRACKERS = typeof types.BLOCK_ADS_TRACKERS
-export type CONTROLS_TOGGLED = typeof types.CONTROLS_TOGGLED
 export type JAVASCRIPT_BLOCKED = typeof types.JAVASCRIPT_BLOCKED
 export type BLOCK_FINGERPRINTING = typeof types.BLOCK_FINGERPRINTING
 export type BLOCK_COOKIES = typeof types.BLOCK_COOKIES
