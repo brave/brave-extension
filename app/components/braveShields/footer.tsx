@@ -16,7 +16,7 @@ export default class ShieldsFooter extends React.PureComponent<{}, {}> {
 
   render () {
     return (
-      <Link href='#' onClick={this.openSettings}>
+      <Link id='braveShieldsFooter' href='#' onClick={this.openSettings}>
         <span>{getMessage('editDefaults')}</span>
         <LinkIcon />
       </Link>
