@@ -142,6 +142,7 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
         }
         setAllowBraveShields(tabData.origin, action.setting)
           .then(() => {
+            setAllowHTTPUpgradableResources(tabData.origin)
             reloadTab(tabId, true).catch(() => {
               console.error('Tab reload was not successful')
             })
@@ -152,26 +153,6 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
           })
         state = shieldsPanelState
           .updateTabShieldsData(state, tabId, { braveShields: action.setting })
-        break
-      }
-    case shieldsPanelTypes.HTTPS_EVERYWHERE_TOGGLED:
-      {
-        const tabData = shieldsPanelState.getActiveTabData(state)
-        if (!tabData) {
-          console.error('Active tab not found')
-          break
-        }
-
-        setAllowHTTPUpgradableResources(tabData.origin, toggleShieldsValue(tabData.httpUpgradableResources))
-          .then(() => {
-            requestShieldPanelData(shieldsPanelState.getActiveTabId(state))
-            reloadTab(tabData.id, true).catch(() => {
-              console.error('Tab reload was not successful')
-            })
-          })
-          .catch(() => {
-            console.error('Could not set HTTPS Everywhere setting')
-          })
         break
       }
     case shieldsPanelTypes.JAVASCRIPT_BLOCKED:

@@ -366,24 +366,6 @@ describe('braveShieldsPanelReducer', () => {
     })
   })
 
-  describe('HTTPS_EVERYWHERE_TOGGLED', function () {
-    before(function () {
-      this.reloadTabSpy = sinon.spy(tabsAPI, 'reloadTab')
-      this.setAllowHTTPUpgradableResourcesSpy = sinon.spy(shieldsAPI, 'setAllowHTTPUpgradableResources')
-    })
-    after(function () {
-      this.reloadTabSpy.restore()
-      this.setAllowHTTPUpgradableResourcesSpy.restore()
-    })
-    it('should call setAllowHTTPUpgradableResources', function () {
-      assert.deepEqual(
-        shieldsPanelReducer(state, {
-          type: types.HTTPS_EVERYWHERE_TOGGLED
-        }), state)
-      assert.equal(this.setAllowHTTPUpgradableResourcesSpy.withArgs(origin, 'allow').calledOnce, true)
-    })
-  })
-
   describe('JAVASCRIPT_BLOCKED', function () {
     before(function () {
       this.reloadTabSpy = sinon.spy(tabsAPI, 'reloadTab')

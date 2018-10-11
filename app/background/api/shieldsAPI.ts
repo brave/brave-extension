@@ -136,12 +136,12 @@ export const setAllowTrackers = (origin: string, setting: string) =>
  * @param {string} origin the origin of the site to change the setting for
  * @return a promise which resolves when the setting is set
  */
-export const setAllowHTTPUpgradableResources = (origin: string, setting: BlockOptions) => {
+export const setAllowHTTPUpgradableResources = (origin: string) => {
   const primaryPattern = origin.replace(/^(http|https):\/\//, '*://') + '/*'
   return chrome.braveShields.plugins.setAsync({
     primaryPattern,
     resourceIdentifier: { id: resourceIdentifiers.RESOURCE_IDENTIFIER_HTTP_UPGRADABLE_RESOURCES },
-    setting,
+    setting: 'block',
     scope: getScope()
   })
 }

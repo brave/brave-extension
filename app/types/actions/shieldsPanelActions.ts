@@ -92,14 +92,6 @@ export interface ControlsToggled {
   (setting: boolean): ControlsToggledReturn
 }
 
-interface HttpsEverywhereToggledReturn {
-  type: types.HTTPS_EVERYWHERE_TOGGLED
-}
-
-export interface HttpsEverywhereToggled {
-  (): HttpsEverywhereToggledReturn
-}
-
 interface BlockJavaScriptReturn {
   type: types.JAVASCRIPT_BLOCKED
   setting: BlockJSOptions
@@ -133,7 +125,6 @@ export type shieldPanelActions =
   ResourceBlockedReturn |
   BlockAdsTrackersReturn |
   ControlsToggledReturn |
-  HttpsEverywhereToggledReturn |
   BlockJavaScriptReturn |
   BlockFingerprintingReturn |
   BlockCookiesReturn |

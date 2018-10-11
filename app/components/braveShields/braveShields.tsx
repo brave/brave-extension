@@ -7,6 +7,7 @@ import { ShieldsPanel } from 'brave-ui/features/shields'
 import ShieldsHeader from './header'
 import ShieldsInterfaceControls from './interfaceControls'
 import ShieldsPrivacyControls from './privacyControls'
+import ShieldsSecurityControls from './securityControls'
 import ShieldsFooter from './footer'
 import * as shieldActions from '../../types/actions/shieldsPanelActions'
 import { Tab } from '../../types/state/shieldsPannelState'
@@ -53,6 +54,10 @@ export default class BraveShields extends React.Component<Props, {}> {
           blockJavaScript={actions.blockJavaScript}
           blockCookies={actions.blockCookies}
           cookies={shieldsPanelTabData.cookies}
+        />
+        <ShieldsSecurityControls
+          braveShields={shieldsPanelTabData.braveShields}
+          httpsRedirected={shieldsPanelTabData.httpsRedirected}
         />
         <ShieldsFooter />
       </ShieldsPanel>

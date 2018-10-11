@@ -246,7 +246,7 @@ describe('Shields API', () => {
   describe('setAllowHTTPUpgradableResource', function () {
     before(function () {
       this.spy = sinon.spy(chrome.braveShields.plugins, 'setAsync')
-      this.p = shieldsAPI.setAllowHTTPUpgradableResources('https://www.brave.com', 'block')
+      this.p = shieldsAPI.setAllowHTTPUpgradableResources('https://www.brave.com')
     })
     after(function () {
       this.spy.restore()

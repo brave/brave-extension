@@ -37,12 +37,6 @@ describe('shieldsPanelActions', () => {
     })
   })
 
-  it('httpsEverywhereToggled action', () => {
-    assert.deepEqual(actions.httpsEverywhereToggled(), {
-      type: types.HTTPS_EVERYWHERE_TOGGLED
-    })
-  })
-
   it('blockJavaScript action', () => {
     assert.deepEqual(actions.blockJavaScript(), {
       type: types.JAVASCRIPT_BLOCKED
