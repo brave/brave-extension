@@ -77,7 +77,7 @@ export default class ShieldsHeader extends React.PureComponent<Props, {}> {
         <SiteCard>
           <EnabledText>
             <img src={getFavicon(url)} />
-            <Label size='large' title={hostname}>{hostname}</Label>
+            <Label id='hostname' size='large' title={hostname}>{hostname}</Label>
           </EnabledText>
           {enabled ? this.enabledContent : this.disabledContent}
         </SiteCard>
