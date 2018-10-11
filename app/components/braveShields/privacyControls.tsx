@@ -9,7 +9,7 @@ import { BlockOptions, BlockCookiesOptions/*, BlockJSOptions */, BlockFPOptions 
 import { getMessage } from '../../background/api/localeAPI'
 import * as shieldActions from '../../types/actions/shieldsPanelActions'
 
-interface Props {
+export interface Props {
   braveShields: BlockOptions
   javascript: BlockOptions // BlockJSOptions
   javascriptBlocked: number
@@ -58,11 +58,11 @@ export default class ShieldsPrivacyControls extends React.PureComponent<Props, {
     }
 
     return (
-      <>
+      <div id='braveShieldsPrivacyControls'>
         {/* cookies select */}
         <Grid>
           <Stat />{/* TODO: implmenent cookies blocked stat */}
-          <SelectBox value={cookies} onChange={this.onChangeCookiesProtection}>
+          <SelectBox id='blockCookies' value={cookies} onChange={this.onChangeCookiesProtection}>
             <option value='block_third_party'>{getMessage('block3partyCookies')}</option>
             <option value='block'>{getMessage('blockAllCookies')}</option>
             <option value='allow'>{getMessage('allowAllCookies')}</option>
@@ -70,8 +70,8 @@ export default class ShieldsPrivacyControls extends React.PureComponent<Props, {
         </Grid>
         {/* scripts select */}
         <Grid>
-          <Stat>{javascriptBlocked}</Stat>
-          <SelectBox value={javascript} onChange={this.onChangeJavaScriptProtection}>
+          <Stat id='blockScriptsStat'>{javascriptBlocked}</Stat>
+          <SelectBox id='blockScripts' value={javascript} onChange={this.onChangeJavaScriptProtection}>
             <option value='block_third_party'>{getMessage('block3partyScripts')}</option>
             <option value='block'>{getMessage('blockAllScripts')}</option>
             <option value='allow'>{getMessage('allowAllScripts')}</option>
@@ -79,14 +79,14 @@ export default class ShieldsPrivacyControls extends React.PureComponent<Props, {
         </Grid>
         {/* fingerprinting select */}
         <Grid>
-          <Stat>{fingerprintingBlocked}</Stat>
-          <SelectBox value={fingerprinting} onChange={this.onChangeFingerprintingProtection}>
+          <Stat id='blockFingerprintingStat'>{fingerprintingBlocked}</Stat>
+          <SelectBox id='blockFingerprinting' value={fingerprinting} onChange={this.onChangeFingerprintingProtection}>
             <option value='block_third_party'>{getMessage('block3partyFingerprinting')}</option>
             <option value='block'>{getMessage('blockAllFingerprinting')}</option>
             <option value='allow'>{getMessage('allowAllFingerprinting')}</option>
           </SelectBox>
         </Grid>
-      </>
+      </div>
     )
   }
 }
