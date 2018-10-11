@@ -142,7 +142,6 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
         }
         setAllowBraveShields(tabData.origin, action.setting)
           .then(() => {
-            setAllowHTTPUpgradableResources(tabData.origin)
             reloadTab(tabId, true).catch(() => {
               console.error('Tab reload was not successful')
             })
@@ -150,6 +149,16 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
           })
           .catch(() => {
             console.error('Could not set shields')
+          })
+        setAllowHTTPUpgradableResources(tabData.origin)
+          .then(() => {
+            requestShieldPanelData(shieldsPanelState.getActiveTabId(state))
+            reloadTab(tabData.id, true).catch(() => {
+              console.error('Tab reload was not successful')
+            })
+          })
+          .catch(() => {
+            console.error('Could not set HTTPS Everywhere setting')
           })
         state = shieldsPanelState
           .updateTabShieldsData(state, tabId, { braveShields: action.setting })
