@@ -6,7 +6,7 @@ import { Stat, GridLabel } from 'brave-ui/features/shields'
 import { BlockOptions } from '../../types/other/blockTypes'
 import { getMessage } from '../../background/api/localeAPI'
 
-interface Props {
+export interface Props {
   braveShields: BlockOptions
   httpsRedirected: number
 }
@@ -19,7 +19,7 @@ export default class ShieldsSecurityControls extends React.PureComponent<Props, 
       return null
     }
     return (
-      <>
+      <div id='braveShieldsSecurityControls'>
         {/* pishing toggle
         <GridLabel>
           <Stat />
@@ -27,10 +27,10 @@ export default class ShieldsSecurityControls extends React.PureComponent<Props, 
         </GridLabel> */}
         {/* connections encrypted toggle */}
         <GridLabel>
-          <Stat>{httpsRedirected}</Stat>
+          <Stat id='httpsRedirectedStat'>{httpsRedirected}</Stat>
           {getMessage('connectionsEncrypted')}
         </GridLabel>
-      </>
+      </div>
     )
   }
 }
