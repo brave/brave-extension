@@ -23,7 +23,7 @@ import { reloadTab } from '../api/tabsAPI'
 import * as shieldsPanelState from '../../state/shieldsPanelState'
 import { State, Tab } from '../../types/state/shieldsPannelState'
 import { Actions } from '../../types/actions/index'
-import { getTotalResourcesBlocked } from '../../helpers/shieldsUtils'
+import { getTotalResourcesBlocked, isShieldsActive } from '../../helpers/shieldsUtils'
 
 const updateShieldsIconBadgeText = (state: State) => {
   const tabId: number = shieldsPanelState.getActiveTabId(state)
@@ -199,7 +199,8 @@ export default function shieldsPanelReducer (state: State = { tabs: {}, windows:
         const currentTabId: number = shieldsPanelState.getActiveTabId(state)
         state = shieldsPanelState.updateResourceBlocked(
           state, tabId, action.details.blockType, action.details.subresource)
-        if (tabId === currentTabId) {
+        const shieldsActive: boolean = isShieldsActive(state, tabId)
+        if (tabId === currentTabId && shieldsActive) {
           updateShieldsIconBadgeText(state)
         }
         break
