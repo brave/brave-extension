@@ -10,9 +10,9 @@ process.env.TARGET_GEN_DIR = path.join(__dirname, '../dev/')
 const buildDir = process.env.TARGET_GEN_DIR
 
 tasks.replaceWebpack()
-console.log('[Copy assets]')
-console.log('-'.repeat(80))
-tasks.copyAssets('dev', buildDir)
+//console.log('[Copy assets]')
+//console.log('-'.repeat(80))
+//tasks.copyAssets('dev', buildDir)
 
 console.log('[Webpack Dev]')
 console.log('-'.repeat(80))

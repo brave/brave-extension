@@ -8,9 +8,9 @@ const tasks = require('./tasks')
 const buildDir = process.env.TARGET_GEN_DIR
 
 tasks.replaceWebpack()
-console.log('[Copy assets]')
-console.log('-'.repeat(80))
-tasks.copyAssets('prod', buildDir)
+//console.log('[Copy assets]')
+//console.log('-'.repeat(80))
+//tasks.copyAssets('prod', buildDir)
 
 console.log('[Webpack Build]')
 console.log('-'.repeat(80))
