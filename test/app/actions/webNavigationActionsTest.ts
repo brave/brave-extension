@@ -4,7 +4,6 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import 'mocha'
-import * as assert from 'assert'
 import * as types from '../../../app/constants/webNavigationTypes'
 import * as actions from '../../../app/actions/webNavigationActions'
 
@@ -13,7 +12,7 @@ describe('webNavigationActions', () => {
     const tabId = 1
     const url = 'https://www.brave.com'
     const isMainFrame = true
-    assert.deepEqual(actions.onBeforeNavigate(tabId, url, isMainFrame), {
+    expect(actions.onBeforeNavigate(tabId, url, isMainFrame)).toEqual({
       type: types.ON_BEFORE_NAVIGATION,
       url,
       tabId,
@@ -24,7 +23,7 @@ describe('webNavigationActions', () => {
     const tabId = 1
     const url = 'https://www.brave.com'
     const isMainFrame = true
-    assert.deepEqual(actions.onCommitted(tabId, url, isMainFrame), {
+    expect(actions.onCommitted(tabId, url, isMainFrame)).toEqual({
       type: types.ON_COMMITTED,
       url,
       tabId,
