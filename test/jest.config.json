@@ -19,7 +19,8 @@
     "!<rootDir>/app/types/**/*"
   ],
   "testMatch": [
-    "<rootDir>/app/actions/*.{ts, tsx}"
+    "<rootDir>/app/actions/*.{ts, tsx}",
+    "<rootDir>/app/background/api/*.ts"
   ],
   "transformIgnorePatterns": [
     "<rootDir>/node_modules"
