@@ -19,8 +19,7 @@
     "!<rootDir>/app/types/**/*"
   ],
   "testMatch": [
-    "<rootDir>/app/background/reducers/cosmeticFilterReducerTest.ts",
-    "<rootDir>/app/background/reducers/shieldsPanelReducerTest.ts"
+    "<rootDir>/app/background/api/cosmeticFilterAPITest.ts"
   ],
   "transformIgnorePatterns": [
     "<rootDir>/node_modules"

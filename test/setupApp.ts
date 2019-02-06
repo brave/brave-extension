@@ -25,6 +25,7 @@ import { tabs, ChromeEvent } from './testData'
 // }
 (global as any).chrome = {
   browserAction: {
+    setBadgeBackgroundColor: jest.fn(),
     setBadgeText: jest.fn(),
     setIcon: jest.fn(),
     enable: jest.fn(),
@@ -48,7 +49,8 @@ import { tabs, ChromeEvent } from './testData'
       setAsync: jest.fn(),
       getAsync: jest.fn()
     },
-    allowScriptsOnce: jest.fn()
+    allowScriptsOnce: jest.fn(),
+    onBlocked: new ChromeEvent()
   },
   runtime: {
     onMessage: new ChromeEvent(),
@@ -58,11 +60,24 @@ import { tabs, ChromeEvent } from './testData'
   tabs: {
     getAsync: (tabId: number) => {
       return Promise.resolve(tabs[tabId])
-    }
+    },
+    create: jest.fn(),
+    insertCSS: function (details: any) { },
+    onActivated: new ChromeEvent(),
+    onCreated: new ChromeEvent(),
+    onUpdated: new ChromeEvent()
   },
   extension: {
     inIncognitoContext: jest.fn()
-  }
+  },
+  windows: {
+    onFocusChanged: new ChromeEvent(),
+    onCreated: new ChromeEvent(),
+    onRemoved: new ChromeEvent(),
+    getAllAsync: function () {
+      return new Promise(() => [])
+    }
+  },
 }
 
 configure({ adapter: new Adapter() })
