@@ -19,7 +19,7 @@
     "!<rootDir>/app/types/**/*"
   ],
   "testMatch": [
-    "<rootDir>/app/background/storeTest.ts"
+    "<rootDir>/app/background/reducersTest.ts"
   ],
   "transformIgnorePatterns": [
     "<rootDir>/node_modules"
