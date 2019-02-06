@@ -19,10 +19,7 @@
     "!<rootDir>/app/types/**/*"
   ],
   "testMatch": [
-    "<rootDir>/app/background/events/windowsEventsTest.ts",
-    "<rootDir>/app/background/events/tabEventsTest.ts",
-    "<rootDir>/app/background/events/shieldsEventsTest.ts",
-    "<rootDir>/app/background/events/runtimeEventsTest.ts"
+    "<rootDir>/app/background/storeTest.ts"
   ],
   "transformIgnorePatterns": [
     "<rootDir>/node_modules"
