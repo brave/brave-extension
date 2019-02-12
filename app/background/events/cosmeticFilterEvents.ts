@@ -36,11 +36,9 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   switch (info.menuItemId) {
     case 'addBlockElement':
       {
-        rule.selector = window.prompt('CSS selector to block: ', `${rule.selector}`) || ''
-        chrome.tabs.insertCSS({
-          code: `${rule.selector} {display: none;}`
+        chrome.runtime.sendMessage({
+          type: 'addBlockElement'
         })
-        cosmeticFilterActions.siteCosmeticFilterAdded(rule.host, rule.selector)
         break
       }
     case 'resetSiteFilterSettings':
@@ -63,5 +61,10 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   rule.host = msg.baseURI
   rule.selector = msg.selector
+  rule.selector = window.prompt('CSS selector to block: ', `${rule.selector}`) || ''
+  chrome.tabs.insertCSS({
+    code: `${rule.selector} {display: none;}`
+  })
+  cosmeticFilterActions.siteCosmeticFilterAdded(rule.host, rule.selector)
   sendResponse(rule)
 })
