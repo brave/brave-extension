@@ -6,8 +6,8 @@
 import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import '../../../../app/background/events/windowsEvents'
-import actions from '../../../../app/background/actions/windowActions'
+import '../../../background/events/windowsEvents'
+import actions from '../../../background/actions/windowActions'
 
 interface WindowIdEvent extends chrome.events.Event<(windowId: number) => void> {
   emit: (windowId: number) => void

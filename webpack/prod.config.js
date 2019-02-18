@@ -7,9 +7,9 @@ const customPath = path.join(__dirname, './customPublicPath')
 
 module.exports = {
   entry: {
-    braveShieldsPanel: [customPath, path.join(__dirname, '../app/braveShieldsPanel')],
-    background: [customPath, path.join(__dirname, '../app/background')],
-    content: [customPath, path.join(__dirname, '../app/content')],
+    braveShieldsPanel: [customPath, path.join(__dirname, '../braveShieldsPanel')],
+    background: [customPath, path.join(__dirname, '../background')],
+    content: [customPath, path.join(__dirname, '../content')],
   },
   mode: 'production',
   optimization: {

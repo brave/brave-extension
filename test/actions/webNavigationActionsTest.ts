@@ -5,8 +5,8 @@
 
 import 'mocha'
 import * as assert from 'assert'
-import * as types from '../../../app/constants/webNavigationTypes'
-import * as actions from '../../../app/actions/webNavigationActions'
+import * as types from '../../constants/webNavigationTypes'
+import * as actions from '../../actions/webNavigationActions'
 
 describe('webNavigationActions', () => {
   it('onBeforeNavigate', () => {

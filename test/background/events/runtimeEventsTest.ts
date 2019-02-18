@@ -6,9 +6,9 @@
 import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import '../../../../app/background/events/runtimeEvents'
-import windowActions from '../../../../app/background/actions/windowActions'
-import tabActions from '../../../../app/background/actions/tabActions'
+import '../../../background/events/runtimeEvents'
+import windowActions from '../../../background/actions/windowActions'
+import tabActions from '../../../background/actions/tabActions'
 import { ChromeEvent } from '../../../testData'
 
 interface InputWindows {

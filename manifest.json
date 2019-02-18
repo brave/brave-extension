@@ -19,7 +19,7 @@
   "web_accessible_resources": [
   ],
   "background": {
-    "scripts": ["/brave_extension_background.bundle.js"],
+    "scripts": ["out/brave_extension_background.bundle.js"],
     "persistent": true
   },
   "content_scripts": [
@@ -29,7 +29,7 @@
         "https://*/*"
       ],
       "js": [
-        "js/content.bundle.js"
+        "out/content.bundle.js"
       ],
       "run_at": "document_start",
       "all_frames": true

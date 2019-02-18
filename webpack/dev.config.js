@@ -11,9 +11,9 @@ const baseDevConfig = () => ({
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
   entry: {
-    braveShieldsPanel: [customPath, hotScript, path.join(__dirname, '../app/braveShieldsPanel')],
-    background: [customPath, hotScript, path.join(__dirname, '../app/background')],
-    content: [customPath, path.join(__dirname, '../app/content')],
+    braveShieldsPanel: [customPath, hotScript, path.join(__dirname, '../braveShieldsPanel')],
+    background: [customPath, hotScript, path.join(__dirname, '../background')],
+    content: [customPath, path.join(__dirname, '../content')],
   },
   devMiddleware: {
     writeToDisk: true,

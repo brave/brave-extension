@@ -6,9 +6,9 @@
 import 'mocha'
 import * as React from 'react'
 import * as assert from 'assert'
-import ShieldsPrivacyControls, { Props } from '../../../../app/components/braveShields/privacyControls'
-import { BlockJSOptions, BlockCookiesOptions, BlockFPOptions } from '../../../../app/types/other/blockTypes'
-import * as actionTypes from '../../../../app/constants/shieldsPanelTypes'
+import ShieldsPrivacyControls, { Props } from '../../../components/braveShields/privacyControls'
+import { BlockJSOptions, BlockCookiesOptions, BlockFPOptions } from '../../../types/other/blockTypes'
+import * as actionTypes from '../../../constants/shieldsPanelTypes'
 import { shallow } from 'enzyme'
 import * as sinon from 'sinon'
 

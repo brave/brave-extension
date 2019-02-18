@@ -5,14 +5,14 @@
 
 import 'mocha'
 import * as assert from 'assert'
-import * as types from '../../../app/constants/shieldsPanelTypes'
-import * as actions from '../../../app/actions/shieldsPanelActions'
-import { ShieldDetails, BlockDetails } from '../../../app/types/actions/shieldsPanelActions'
+import * as types from '../../constants/shieldsPanelTypes'
+import * as actions from '../../actions/shieldsPanelActions'
+import { ShieldDetails, BlockDetails } from '../../types/actions/shieldsPanelActions'
 import {
   BlockOptions,
   BlockFPOptions,
   BlockCookiesOptions
-} from '../../../app/types/other/blockTypes'
+} from '../../types/other/blockTypes'
 
 describe('shieldsPanelActions', () => {
   it('shieldsPanelDataUpdated', () => {

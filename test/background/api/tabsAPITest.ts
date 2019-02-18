@@ -6,7 +6,7 @@
 import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import * as tabsAPI from '../../../../app/background/api/tabsAPI'
+import * as tabsAPI from '../../../background/api/tabsAPI'
 
 describe('tabs API', () => {
   describe('createTab', function () {

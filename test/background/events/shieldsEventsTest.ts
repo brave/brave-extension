@@ -6,8 +6,8 @@
 import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import '../../../../app/background/events/shieldsEvents'
-import actions from '../../../../app/background/actions/shieldsPanelActions'
+import '../../../background/events/shieldsEvents'
+import actions from '../../../background/actions/shieldsPanelActions'
 import { blockedResource } from '../../../testData'
 
 describe('shieldsEvents events', () => {

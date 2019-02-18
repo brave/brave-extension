@@ -6,8 +6,8 @@
 import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import '../../../../app/background/events/tabsEvents'
-import actions from '../../../../app/background/actions/tabActions'
+import '../../../background/events/tabsEvents'
+import actions from '../../../background/actions/tabActions'
 
 interface TabActivatedEvent extends chrome.events.Event<(activeInfo: chrome.tabs.TabActiveInfo) => void> {
   emit: (detail: chrome.tabs.TabActiveInfo) => void

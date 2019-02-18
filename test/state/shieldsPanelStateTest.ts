@@ -6,8 +6,8 @@
 import 'mocha'
 import * as assert from 'assert'
 import * as deepFreeze from 'deep-freeze-node'
-import * as shieldsPanelState from '../../../app/state/shieldsPanelState'
-import { State } from '../../../app/types/state/shieldsPannelState'
+import * as shieldsPanelState from '../../state/shieldsPanelState'
+import { State } from '../../types/state/shieldsPannelState'
 
 const state: State = deepFreeze({
   currentWindowId: 1,

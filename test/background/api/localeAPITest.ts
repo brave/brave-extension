@@ -6,7 +6,7 @@
 import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import * as localeAPI from '../../../../app/background/api/localeAPI'
+import * as localeAPI from '../../../background/api/localeAPI'
 
 describe('locale API', () => {
   describe('getMessage', function () {

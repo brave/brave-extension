@@ -7,8 +7,8 @@ import 'mocha'
 import * as React from 'react'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import ShieldsFooter from '../../../../app/components/braveShields/footer'
-import * as tabsAPI from '../../../../app/background/api/tabsAPI'
+import ShieldsFooter from '../../../components/braveShields/footer'
+import * as tabsAPI from '../../../background/api/tabsAPI'
 import { shallow } from 'enzyme'
 
 describe('ShieldsFooter component', () => {

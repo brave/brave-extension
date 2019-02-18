@@ -6,11 +6,11 @@
 import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import actions from '../../../../app/background/actions/shieldsPanelActions'
-import * as shieldsAPI from '../../../../app/background/api/shieldsAPI'
+import actions from '../../../background/actions/shieldsPanelActions'
+import * as shieldsAPI from '../../../background/api/shieldsAPI'
 import { activeTabData } from '../../../testData'
-import { Tab as TabType } from '../../../../app/types/state/shieldsPannelState'
-import * as resourceIdentifiers from '../../../../app/constants/resourceIdentifiers'
+import { Tab as TabType } from '../../../types/state/shieldsPannelState'
+import * as resourceIdentifiers from '../../../constants/resourceIdentifiers'
 
 describe('Shields API', () => {
   describe('getShieldSettingsForTabData', function () {

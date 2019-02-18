@@ -3,7 +3,7 @@ import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
 
-import * as cosmeticFilterAPI from '../../../../app/background/api/cosmeticFilterAPI'
+import * as cosmeticFilterAPI from '../../../background/api/cosmeticFilterAPI'
 
 describe('cosmeticFilterTestSuite', () => {
   describe('addSiteCosmeticFilter', function () {

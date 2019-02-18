@@ -4,7 +4,7 @@
 
 import 'mocha'
 import * as assert from 'assert'
-import { isHttpOrHttps, hasPortNumber } from '../../../app/helpers/urlUtils'
+import { isHttpOrHttps, hasPortNumber } from '../../helpers/urlUtils'
 
 describe('urlUtils test', function () {
   describe('isHttpOrHttps', function () {

@@ -5,8 +5,8 @@
 
 import 'mocha'
 import * as assert from 'assert'
-import * as types from '../../../app/constants/tabTypes'
-import * as actions from '../../../app/actions/tabActions'
+import * as types from '../../constants/tabTypes'
+import * as actions from '../../actions/tabActions'
 
 describe('tabActions', () => {
   it('activeTabChanged', () => {

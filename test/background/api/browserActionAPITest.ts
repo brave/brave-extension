@@ -6,7 +6,7 @@
 import 'mocha'
 import * as sinon from 'sinon'
 import * as assert from 'assert'
-import * as browserActionAPI from '../../../../app/background/api/browserActionAPI'
+import * as browserActionAPI from '../../../background/api/browserActionAPI'
 
 describe('BrowserAction API', () => {
   describe('setBadgeText', function () {

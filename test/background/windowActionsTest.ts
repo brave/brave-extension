@@ -5,8 +5,8 @@
 
 import 'mocha'
 import * as assert from 'assert'
-import * as types from '../../../app/constants/windowTypes'
-import * as actions from '../../../app/actions/windowActions'
+import * as types from '../../constants/windowTypes'
+import * as actions from '../../actions/windowActions'
 
 describe('windowActions', () => {
   it('windowFocusChanged', () => {

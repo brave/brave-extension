@@ -5,7 +5,7 @@
 
 import 'mocha'
 import * as assert from 'assert'
-import reducers from '../../../app/background/reducers'
+import reducers from '../../background/reducers'
 import { initialState } from '../../testData'
 
 describe('reducers test', () => {

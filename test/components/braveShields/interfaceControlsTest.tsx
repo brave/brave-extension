@@ -6,9 +6,9 @@
 import 'mocha'
 import * as React from 'react'
 import * as assert from 'assert'
-import ShieldsInterfaceControls, { Props } from '../../../../app/components/braveShields/interfaceControls'
-import { BlockOptions } from '../../../../app/types/other/blockTypes'
-import * as actionTypes from '../../../../app/constants/shieldsPanelTypes'
+import ShieldsInterfaceControls, { Props } from '../../../components/braveShields/interfaceControls'
+import { BlockOptions } from '../../../types/other/blockTypes'
+import * as actionTypes from '../../../constants/shieldsPanelTypes'
 import { shallow } from 'enzyme'
 import * as sinon from 'sinon'
 

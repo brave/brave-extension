@@ -5,9 +5,9 @@
 
 import 'mocha'
 import * as assert from 'assert'
-import * as types from '../../../app/constants/cosmeticFilterTypes'
-import * as actions from '../../../app/actions/cosmeticFilterActions'
-import {} from '../../../app/types/actions/cosmeticFilterActions'
+import * as types from '../../constants/cosmeticFilterTypes'
+import * as actions from '../../actions/cosmeticFilterActions'
+import {} from '../../types/actions/cosmeticFilterActions'
 
 describe('cosmeticFilterActions', () => {
   it('siteCosmeticFilterAdded action', () => {

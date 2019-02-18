@@ -16,13 +16,3 @@ exports.replaceWebpack = () => {
 
   replaceTasks.forEach(task => cp(task.from, task.to))
 }
-
-/*
-exports.copyAssets = (type, outputDir) => {
-  rm('-rf', outputDir)
-  mkdir(outputDir)
-  cp(`app/manifest.${type}.json`, `${outputDir}/manifest.json`)
-  cp('-R', 'app/_locales/', outputDir)
-  cp('-R', 'app/assets/*', outputDir)
-}
-*/
