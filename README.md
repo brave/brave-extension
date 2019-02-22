@@ -1,3 +1,6 @@
+> # ⚠️ This project is going to be archived.
+> ## If you're looking to contribute to brave-extension, check out its new home at https://github.com/brave/brave-core. Pull requests against this repository are going to be ignored.
+
 # Brave Only Extension
 
 [![Build Status](https://travis-ci.org/brave/brave-extension.svg?branch=master)](https://travis-ci.org/brave/brave-extension)
