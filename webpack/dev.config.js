@@ -63,11 +63,7 @@ const baseDevConfig = () => ({
       },
       {
         test: /\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          {loader: 'postcss-loader', options: postCSSConfig}
-        ]
+        loader: ['style-loader', 'css-loader']
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

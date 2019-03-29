@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const postCSSConfig = require('./postcss.config')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const customPath = path.join(__dirname, './customPublicPath')
@@ -56,11 +55,7 @@ module.exports = {
         }
       }, {
         test: /\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          { loader: 'postcss-loader', options: postCSSConfig }
-        ]
+        loader: ['style-loader', 'css-loader']
       },
       {
         test: /\.(woff(2)|svg)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
